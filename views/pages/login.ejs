@@ -1,0 +1,27 @@
+<% include ../partials/head %>
+  <body>
+    <% include ../partials/header %>
+    <% if (msg) { %>
+    <h6 <style="color:red;"><%= msg %></h6>
+    <% } %>
+    <h1>login</h1>
+    <div class="login">
+    <form  action = "/nk/authenticate" method="post">
+      <div class="alignment">
+				<label> Username </label>
+      <input type="text" name="username" placeholder="Enter username">
+      </div>
+      <div class="alignment">
+				<label> Username </label>
+      <input type="password" name="password" placeholder="Enter password">
+      </div>
+      <div class="loginButton">
+      <input type="submit"  value="Login">
+      </div>
+    </form>
+    </div>
+    	<div class="registerButton">
+    <a href="/nk/register">Register</a>
+    </div>
+  </body>
+</html>

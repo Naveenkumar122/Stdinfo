@@ -1,0 +1,51 @@
+<% include ../partials/head %>
+  <body>
+    <% include ../partials/header %>
+    <h1>Country Master</h1>
+    <div class="login">
+       <form  action="/nk/add_country" method="post">
+         <div class="alignment">
+				    <label> Country Name </label>
+               <input type="text" name="countryname">
+          </div>
+          <div class="loginButtonSMa">
+               <input type="submit"  value="submit">
+          </div>
+     </form>
+</div>
+<div class="tab">
+		<div class="container">
+			<div class="wrapTable">
+				<div class="table100">
+                        <table>
+                          <thead>
+                             <tr class="table100-head">
+                                <th class="column1">Country name</th>
+                                <th class="column2">Update</th>
+                                <th class="column3">Delete</th>
+                             </tr>
+                          </thead>
+                        <% country.forEach(function(contries){ %>
+                          <tbody>
+                             <tr>
+                                <td class="column1"><%= contries.countryname %></td>
+                                   <td class="column2">
+                                   <div class="stateMasterButton01">
+                                     <a href="/nk/country/edit/<%= contries._id%>">Edit</a>
+                                </div>
+                                </td>
+                                <td class="column3">
+                                  <div class="stateMasterButton01">
+                                   <a href="/nk/country/delete/<%= contries._id%>">delete</a>
+                                   </div>
+                                </td>
+                             </tr>
+                        </tbody>
+                  <% }); %>
+              </table>
+          </div>
+      </div>
+  </div>
+</div>
+</body>
+</html>

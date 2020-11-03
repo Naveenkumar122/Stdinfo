@@ -1,0 +1,83 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Login</title>
+	<link href="css/style.css" rel='stylesheet' type='text/css' />
+	<link rel="stylesheet" href="/style/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="/script/script.js"></script>
+</head>
+<body>
+  <header>
+            <nav>
+               <div class="menu-icon">
+                  <i class="fa fa-bars fa-2x"></i>
+               </div>
+               <div class="logo">
+				THE AMERICAN COLLEGE
+			 </div>
+               <div class="menu">
+                <ul>
+					<li><a href="/nk/main">Home</a></li>
+					<li><a href="/nk/login">Login</a></li>
+					<li><a href="/nk/register">Register</a></li>
+					<li><a href="/nk/logout">Logout</a></li>
+				 </ul>
+               </div>
+            </nav>
+</header>
+  <% if (msg) { %>
+  <h6><%= msg %></h6>
+  <% } %>
+<div class="cont">
+	<div class="columns">
+		<div class="cols">
+
+			<div class="columnList">
+
+				<div class="list">
+			<ul>
+      <h1>Master</h1>
+      <li><a href="/nk/state_master">State</a></li>
+      <li><a href="/nk/student_master">Student</a></li>
+      <li><a href="/nk/country_master">Country</a></li>
+      <li><a href="/nk/department_master">Department</a></li>
+    </ul>
+  </div>
+</div>
+</div>
+  	<div class="cols">
+
+  		<div class="columnList">
+
+  			<div class="list">
+  				<ul>
+  					<h1>Reports</h1>
+  					<li><a href="#">Achievements</a></li>
+  				</ul>
+  			</div>
+  		</div>
+  	</div>
+
+  		<div class="cols">
+
+  			<div class="columnList">
+
+  				<div class="list">
+  				<ul>
+  					<h1>Results</h1>
+  					<li><a href="#">Semester</a></li>
+  				</ul>
+
+  				</div>
+  			</div>
+  		</div>
+  	</div>
+ </div>
+  </body>
+  </html>

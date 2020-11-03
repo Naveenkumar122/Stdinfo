@@ -1,0 +1,131 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>sis</title>
+    <link rel="stylesheet" href="\style\style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	<script src="\style\script\script.js"></script>
+  </head>
+
+<body>
+  <header>
+              <nav>
+                 <div class="menu-icon">
+                    <i class="fa fa-bars fa-2x"></i>
+                 </div>
+                 <div class="logo">
+  				THE AMERICAN COLLEGE
+  			 </div>
+                 <div class="menu">
+                  <ul>
+  					<li><a href="/nk/main">Home</a></li>
+  					<li><a href="/nk/login">Login</a></li>
+  					<li><a href="/nk/register">Register</a></li>
+  					<li><a href="/nk/logout">Logout</a></li>
+  				 </ul>
+                 </div>
+              </nav>
+  </header>
+
+    <h1>Student Master</h1>
+       <div class="login">
+          <form  action="/nk/add_profiles" method="post">
+            <div class="alignment">
+				        <label> First Name </label>
+                   <input type="text" name="firstname" placeholder="Enter firstname">
+            </div>
+            <div class="alignment">
+				        <label> Last Name </label>
+                    <input type="text" name="lastname" placeholder="Enter lastname">
+            </div>
+            <div class="alignment">
+				         <label> Roll no </label>
+                     <input type="text" name="rollno" placeholder="Enter Roll no"><br>
+            </div>
+            <div class="align">
+				         <label> Date of Birth </label>
+                     <input type="date" name="dob" placeholder="Enter DOB"><br>
+            </div>
+            <div class="dr">
+				         <label> State </label>
+                    <select class="sel" name="state">
+                        <% stat.forEach(function(states){ %>
+                          <option value="<%= states.statename %>"><%= states.statename %></option>
+                       <% }); %>
+                   </select>
+            </div>
+            <div class="alignment">
+				         <label> Address </label>
+                      <input type="text" name="address" placeholder="Enter address">
+            </div>
+            <div class="dr1">
+				         <label> Country </label>
+                    <select class="sel" name="country">
+                      <% countries.forEach(function(cts){ %>
+                      <option value="<%= cts.countryname %>"><%= cts.countryname %></option>
+                      <% }); %>
+                    </select>
+            </div>
+            <div class="alignment">
+				        <label> Post Code </label>
+                      <input type="text" name="postcode" placeholder="Enter postcode">
+            </div>
+            <div class="dr1">
+                <label> Department </label>
+                    <select class="sel" name="department">
+                      <% departments.forEach(function(cts){ %>
+                      <option value="<%= cts.departmentname %>"><%= cts.departmentname %></option>
+                      <% }); %>
+                    </select>
+            </div>
+            <div class="alignment">
+				        <label> Year </label>
+                    <input type="number" name="year"placeholder="Enter year">
+            </div>
+            <div class="loginButtonSMa">
+                   <input type="submit"  value="submit">
+            </div>
+  </form>
+</div>
+<div class="tab">
+		<div class="container">
+			<div class="wrapTable">
+				<div class="table100">
+                       <table>
+                           <thead>
+                               <tr>
+                                 <th>First name</th>
+                                 <th>Last name</th>
+                                 <th>DOB</th>
+                                 <th>Update</th>
+                                 <th>Delete</th>
+                               </tr>
+                            </thead>
+                            <tbody>
+    <% profil.forEach(function(profile){ %>
+                             <tr>
+                                <td class="column1"><%= profile.firstname%></td>
+                                <td class="column1"><%= profile.lastname%></td>
+                                <td class="column1"><%= profile.dob%></td>
+                                <td class="column2">
+                                  <div class="stateMasterButton01">
+                                  <a href="/nk/profile/edit/<%= profile._id %>">Edit</a>
+                                  </div>
+                                </td>
+                                <td class="column3">
+                                  <div class="stateMasterButton01">
+                                  <a href="/nk/profile/delete/<%= profile._id %>">Delete</a>
+                                  </div>
+                                </td>
+                             </tr>
+    <% }); %>
+                            </tbody>
+  </table>
+</body>
+</html>

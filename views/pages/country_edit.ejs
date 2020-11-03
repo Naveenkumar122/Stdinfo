@@ -1,0 +1,17 @@
+<% include ../partials/head %>
+<body>
+  <% include ../partials/header %>
+  <h1>Edit Country</h1>
+  <div class="login">
+  <form accept-charset="UTF-8" action="/nk/country/update/<%= country_id%>" method="post">
+        <div class="alignment">
+          <label>Country name</label>
+             <input type="text" name="countryname">
+        </div>
+        <div class="loginButtonSMa">
+            <input type="submit"  value="update">
+        </div>
+  </form>
+  </div>
+</body>
+</html>

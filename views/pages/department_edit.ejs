@@ -1,0 +1,17 @@
+<% include ../partials/head %>
+<body>
+  <% include ../partials/header %>
+  <h1>Edit Department</h1>
+  <div class="login">
+  <form accept-charset="UTF-8" action="/nk/department/update/<%= department_id%>" method="post">
+        <div class="alignment">
+          <label>Department name</label>
+             <input type="text" name="departmentname">
+        </div>
+        <div class="loginButtonSMa">
+            <input type="submit"  value="update">
+        </div>
+  </form>
+  </div>
+</body>
+</html>

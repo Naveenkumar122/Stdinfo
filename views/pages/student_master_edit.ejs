@@ -1,0 +1,65 @@
+<% include ../partials/head %>
+<body>
+  <% include ../partials/header %>
+    <h1>Student Master</h1>
+       <div class="login">
+          <form  action="/nk/profile/update/<%= id %>" method="post">
+            <div class="alignment">
+				        <label> First Name </label>
+                   <input type="text" name="firstname" placeholder="Enter firstname">
+            </div>
+            <div class="alignment">
+				        <label> Last Name </label>
+                    <input type="text" name="lastname" placeholder="Enter lastname">
+            </div>
+            <div class="alignment">
+				         <label> Roll no </label>
+                     <input type="text" name="rollno" placeholder="Enter Roll no"><br>
+            </div>
+            <div class="align">
+				         <label> Date of Birth </label>
+                     <input type="date" name="dob" placeholder="Enter DOB"><br>
+            </div>
+            <div class="dr">
+				         <label> State </label>
+                    <select class="sel" name="state">
+                        <% stat.forEach(function(states){ %>
+                          <option value="<%= states.statename %>"><%= states.statename %></option>
+                       <% }); %>
+                   </select>
+            </div>
+            <div class="alignment">
+				         <label> Address </label>
+                      <input type="text" name="address" placeholder="Enter address">
+            </div>
+            <div class="dr1">
+				         <label> Country </label>
+                    <select class="sel" name="country">
+                      <% countries.forEach(function(cts){ %>
+                      <option value="<%= cts.countryname %>"><%= cts.countryname %></option>
+                      <% }); %>
+                    </select>
+            </div>
+            <div class="alignment">
+				        <label> Post Code </label>
+                      <input type="text" name="postcode" placeholder="Enter postcode">
+            </div>
+            <div class="dr1">
+                <label>Department</label>
+                    <select class="sel" name="department">
+                      <% departments.forEach(function(cts){ %>
+                      <option value="<%= cts.departmentname %>"><%= cts.departmentname %></option>
+                      <% }); %>
+                    </select>
+            </div>
+            <div class="alignment">
+				        <label> Year </label>
+                    <input type="number" name="year"placeholder="Enter year">
+            </div>
+            <div class="loginButtonSMa">
+                   <input type="submit"  value="submit">
+            </div>
+  </form>
+</div>
+</body>
+</html>

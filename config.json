@@ -1,0 +1,4 @@
+{
+    "connect": "mongodb+srv://nkpirates:heysmart@database-escdm.mongodb.net/nkpirate?retryWrites=true",
+    "secret": "heysmart"
+}
